@@ -1,0 +1,47 @@
+body {
+	margin: 5%;
+	border: 1px solid black;
+}
+
+#page-header {
+	width: 100%;
+	border-bottom: 2px solid black;
+	background-color: gray;
+}
+#table-title {
+	padding-left: 1em;
+}
+
+#table-title {
+	display: inline-block;
+}
+
+#filter {
+	display: inline-block;
+	margin-left: 2em;
+	margin-top: none;
+}
+
+#name-arrow {
+	display: inline-block;
+
+}
+
+#table {
+	width: 100%;
+}
+.table-header {
+	text-align: left;
+	padding: 0.5em;
+	background-color: #CECECE;
+}
+.table-data {
+	text-align: left;
+	padding: 0.55em;
+}
+.even {
+	background-color: #F6F6F6;
+}
+.row {
+	width: 100%;
+}

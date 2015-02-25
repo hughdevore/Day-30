@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Etsy Filter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body ng-app="app" ng-controller="AppCtrl">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <!-- TABLE HEADER & FILTER TEXT BOX -->
+        <div id="page-header">
+            <div id="table-title">
+                <h1>Etsy</h1>
+            </div>
+            <div id="filter">
+                <input type="text" placeholder="Filter" name="filter" ng-model="filter">
+            </div>
+        </div>
+
+        <div id="state-feed">
+            <table id="table">
+                <tr>
+                    <th class="table-header" ng-click="onClick()">Name
+                        <i class="fa fa-caret-up" ng-show="upArrow"></i>
+                        <i class="fa fa-caret-down" ng-hide="downArrow"></i>
+                    </th>
+                    <th class="table-header" ng-click="onClick()">Abbreviation
+                        <i class="fa fa-caret-up" ng-show="upArrow"></i>
+                        <i class="fa fa-caret-down" ng-hide="downArrow"></i>
+                    </th>
+                    <th class="table-header">Link</th>
+                </tr>
+                <tr class="row" ng-repeat="state in changedStateList track by $index" ng-class-even="'even'">
+                    <td class="table-data">{{ state.name }}</td>
+                    <td class="table-data">{{ state.abbreviation }}</td>
+                    <td class="table-data"><a ng-href="https://en.wikipedia.org/wiki/{{ state.name }}">Link</a></td>
+                </tr> 
+            </table>
+
+            <div ng-hide="error">
+                {{ error }}
+            </div>
+        </div>
+
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/controllers.js"></script>
+        <script type="text/javascript" src="scripts/services.js"></script>
+
+    </body>
+</html>
